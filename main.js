@@ -38,11 +38,13 @@ let submitButton = document.getElementById("submit");
 
 //word-o-matic.herokuapp.com/
 
-https: fetch("/fiveLetterWords.json")
+// /fiveLetterWords.json
+
+https: fetch("/markthbkk.github.io/fiveLetterWords.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach(function (word) {
-      //   console.log(word.WORD);
+      // console.log(word.WORD);
       fiveLetterWordsArray.push(word.WORD);
     });
     console.log(`Working with ${fiveLetterWordsArray.length} words`);
@@ -133,13 +135,24 @@ function buildArrayAndProcess() {
     wordleArray[index] = arrayValue;
   });
 
-  let allFields = document.getElementsByClassName("field");
+  let allFields;
 
-  let allFieldsArray = Array.from(allFields);
+  allFields = document.getElementsByClassName("field");
+
+  let allFieldsArray = new Array(0);
+
+  allFieldsArray = Array.from(allFields);
+
+  console.log(allFieldsArray);
+
+  excludeArray = [];
+
+  console.log(excludeArray);
 
   allFieldsArray.forEach(function (element) {
     console.log(element.classList, element.innerText);
     if (element.classList.value.includes("grey")) {
+      console.log(element.innerText);
       excludeArray.push(element.innerText);
     }
   });
@@ -186,7 +199,7 @@ function buildArrayAndProcess() {
     let result1 = regex1.exec(word.toUpperCase());
 
     if (result1) {
-      console.log(`RESULT1: ${result1.input}`);
+      // console.log(`RESULT1: ${result1.input}`);
 
       greenMatchArray.push(word.toUpperCase());
     }
@@ -206,7 +219,7 @@ function buildArrayAndProcess() {
 
           let result2 = regex2.exec(word);
 
-          console.log(result2);
+          // console.log(result2);
 
           if (result2 === null) {
             pass = false;
@@ -233,6 +246,8 @@ function buildArrayAndProcess() {
       // console.log(word);
 
       if (excludeArray.length > 0) {
+        console.log(excludeArray);
+
         for (let i = 0; i < excludeArray.length; i++) {
           let regex3 = new RegExp(excludeArray[i]);
 
@@ -244,7 +259,7 @@ function buildArrayAndProcess() {
           }
 
           if (i === excludeArray.length - 1 && matchExcludedWord === false) {
-            console.log(matchExcludedWord, word);
+            console.log(`Block: ${matchExcludedWord}, ${word}`);
             finalArray.push(word);
           }
         }
