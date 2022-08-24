@@ -40,7 +40,7 @@ let submitButton = document.getElementById("submit");
 
 // /fiveLetterWords.json
 
-https: fetch("/markthbkk.github.io/fiveLetterWords.json")
+https: fetch("/fiveLetterWords.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach(function (word) {
