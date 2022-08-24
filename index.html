@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script defer src="main.js"></script>
+    <title>Wordle Cheat</title>
+  </head>
+  <body>
+    <div id="frame">
+      <div id="title">
+        <span>Word-O-Matic</span>
+      </div>
+      <div id="instructions">
+        <span
+          >Stuck on Wordle? Let us help you cheat! <br /><br />Enter the letters
+          you already have and then choose Green or Yellow to match the colours
+          in your Wordle grid.<br /><br /> Enter your "greys" on the QWERTY layout below.
+          <br /><br />
+          Keep clicking a square to change it's colour</span
+        >
+      </div>
+
+      <div id="outer">
+        <div id="wordle-block">
+          <div
+            class="wordle-square wordle-white"
+            id="SQ1"
+             ><input type="text" maxlength="1">
+            </div>
+          <div class="wordle-square wordle-white"
+            id="SQ2"
+             ><input type="text" maxlength="1"></div>
+          <div class="wordle-square wordle-white"
+            id="SQ3"
+             ><input type="text" maxlength="1">
+            </div>
+          <div class="wordle-square wordle-white"
+            id="SQ4"
+             ><input type="text" maxlength="1">
+            </div>
+          <div class="wordle-square wordle-white"
+            id="SQ5"
+             ><input type="text" maxlength="1">
+            </div>
+        </div>
+      </div> 
+
+      <div id="toprow">
+          <div class="field field-white">
+            <span>Q</span>
+          </div>
+          <div class="field field-white">
+            <span>W</span>
+          </div>
+          <div class="field field-white">
+            <span>E</span>
+          </div>
+          <div class="field field-white">
+            <span>R</span>
+          </div>
+          <div class="field field-white">
+            <span>T</span>
+          </div>
+          <div class="field field-white">
+            <span>Y</span>
+          </div>
+          <div class="field field-white">
+            <span>U</span>
+          </div>
+          <div class="field field-white">
+            <span>I</span>
+          </div>
+          <div class="field field-white">
+            <span>O</span>
+          </div>
+          <div class="field field-white">
+            <span>P</span>
+          </div>
+      </div>
+
+      <div id="middlerow">
+          <div class="field field-white">
+            <span>A</span>
+          </div>
+          <div class="field field-white">
+            <span>S</span>
+          </div>
+          <div class="field field-white">
+            <span>D</span>
+          </div>
+          <div class="field field-white">
+            <span>F</span>
+          </div>
+          <div class="field field-white">
+            <span>G</span>
+          </div>
+          <div class="field field-white">
+            <span>H</span>
+          </div>
+          <div class="field field-white">
+            <span>J</span>
+          </div>
+          <div class="field field-white">
+            <span>K</span>
+          </div>
+          <div class="field field-white">
+            <span>L</span>
+          </div>
+      </div>
+
+      <div id="bottomrow">
+          <div class="field field-white">
+            <span>Z</span>
+          </div>
+          <div class="field field-white">
+            <span>X</span>
+          </div>
+          <div class="field field-white">
+            <span>C</span>
+          </div>
+          <div class="field field-white">
+            <span>V</span>
+          </div>
+          <div class="field field-white">
+            <span>B</span>
+          </div>
+          <div class="field field-white">
+            <span>N</span>
+          </div>
+          <div class="field field-white">
+            <span>M</span>
+          </div>
+      </div>
+
+      <div id="buttons-main"><div id="submit"><button type="submit">Submit</button></div>
+      <div id="reset" class=""><button type="submit">Reset</button></div></div>
+      
+<div id="results"><ul id="resultsUL"></ul></div>
+
+<div id="buttons-results"><div class="hidden" id="resultsReset"><button type="submit">Reset</button></div>
+</div>
+
+
+      </div>
+    </div>
+  </body>
+</html>
