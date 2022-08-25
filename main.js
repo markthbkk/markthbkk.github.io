@@ -36,6 +36,10 @@ let fiveLetterWordsArray = new Array(0);
 
 let submitButton = document.getElementById("submit");
 
+let = modalFired = false;
+
+const isVisible = "is-visible";
+
 //word-o-matic.herokuapp.com/
 
 // /fiveLetterWords.json
@@ -194,9 +198,12 @@ function buildArrayAndProcess() {
   );
 
   if (intersection1.length > 0 || intersection2.length > 0) {
-    alert(
-      "Your selection includes at least one 'Grey' which is also a 'Green' or 'Yellow'\nHit RESET and start again!"
-    );
+    // alert(
+    //   "Your selection includes at least one 'Grey' which is also a 'Green' or a 'Yellow'\nHit RESET and start again!"
+    // );
+
+    document.getElementById("modal1").classList.add(isVisible);
+    modalFired = true;
   }
 
   let regexstr = [...regexArray].join("");
@@ -294,7 +301,10 @@ function buildArrayAndProcess() {
 
     resultsResetDiv.classList.remove("hidden");
   } else {
-    alert("No Results Found");
+    if (modalFired === false) {
+      // alert("No Results Found");
+      document.getElementById("modal2").classList.add(isVisible);
+    }
   }
 }
 
@@ -326,6 +336,8 @@ function resetPage() {
   let greenMatchArray = new Array(0);
 
   let finalArray = new Array(0);
+
+  let = modalFired = false;
 
   resultsUL.innerHTML = "";
 
@@ -365,6 +377,8 @@ function resetPageFromResultsSection() {
 
   let finalArray = new Array(0);
 
+  let = modalFired = false;
+
   window.location.hash = "#frame";
 
   resultsUL.innerHTML = "";
@@ -375,3 +389,16 @@ function resetPageFromResultsSection() {
 
   resultsResetDiv.classList.add("hidden");
 }
+
+document.addEventListener("click", (e) => {
+  if (e.target == document.querySelector(".modal.is-visible")) {
+    document.querySelector(".modal.is-visible").classList.remove("is-visible");
+  }
+});
+
+document.addEventListener("keyup", (e) => {
+  // if we press the ESC
+  if (e.key == "Escape" && document.querySelector(".modal.is-visible")) {
+    document.querySelector(".modal.is-visible").classList.remove("is-visible");
+  }
+});
