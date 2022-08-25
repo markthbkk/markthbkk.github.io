@@ -40,7 +40,7 @@ let submitButton = document.getElementById("submit");
 
 // /fiveLetterWords.json
 
-https: fetch("/fiveLetterWords.json")
+https: fetch("fiveLetterWords.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach(function (word) {
@@ -183,6 +183,20 @@ function buildArrayAndProcess() {
   if (yellows.length === 0 && greens.length === 0) {
     alert("Please select at least one green or yellow letter");
     return;
+  }
+
+  const intersection1 = excludeArray.filter((element) =>
+    yellows.includes(element)
+  );
+
+  const intersection2 = excludeArray.filter((element) =>
+    greens.includes(element)
+  );
+
+  if (intersection1.length > 0 || intersection2.length > 0) {
+    alert(
+      "Your selection includes at least one 'Grey' which is also a 'Green' or 'Yellow'\nHit RESET and start again!"
+    );
   }
 
   let regexstr = [...regexArray].join("");
