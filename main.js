@@ -191,7 +191,7 @@ function buildArrayAndProcess() {
     return;
   }
 
-  console.log(`SANITY CHECK: ${excludeArray[0]} ` );
+  // console.log(`SANITY CHECK: ${excludeArray[0]} ` );
 
   const intersection1 = excludeArray.filter((element) =>
     yellows.includes(element)
