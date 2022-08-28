@@ -193,8 +193,10 @@ function buildArrayAndProcess() {
 
 
 
-  const intersection1 = excludeArray.filter((element) => console.log(element);
+  const intersection1 = excludeArray.filter((element) => {
+    console.log(element);
     yellows.includes(element)
+  }
   );
 
   const intersection2 = excludeArray.filter((element) =>
