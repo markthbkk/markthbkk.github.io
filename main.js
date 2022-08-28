@@ -266,7 +266,7 @@ function buildArrayAndProcess() {
 
       // console.log(word);
 
-      if (excludeArray.length > 0) {
+      if (excludeArray.length = 0) {
         
 
         for (let i = 0; i < excludeArray.length; i++) {
