@@ -260,33 +260,29 @@ function buildArrayAndProcess() {
 
   let finalArray = new Array(0);
 
-  if (excludeArray.length > 0) {
+  if (excludeArray.length === 0) {
     yellowMatchArray.forEach(function (word) {
       let matchExcludedWord = false;
 
       // console.log(word);
 
       if (excludeArray.length === 0) {
-        
-
         for (let i = 0; i < excludeArray.length; i++) {
-
-          console.log(`This is the array member: ${ excludeArray[i]}`);
+          console.log(`This is the array member: ${excludeArray[i]}`);
 
           // let regex3 = new RegExp(`${(excludeArray[i]).replace("\n", "")}`);
-          
-          let regex3 = new RegExp('W')
 
-          console.log(`Using this REGEX: ${regex3}`)
+          let regex3 = new RegExp("W");
+
+          console.log(`Using this REGEX: ${regex3}`);
 
           let result3 = regex3.exec(word);
 
-          console.log(`now checking ${word}`)
+          console.log(`now checking ${word}`);
 
           console.log(result3.input);
 
           if (result3) {
-
             console.log(result3);
             console.log(result3.input, excludeArray[i]);
             matchExcludedWord = true;
