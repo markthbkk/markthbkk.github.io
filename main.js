@@ -154,7 +154,7 @@ function buildArrayAndProcess() {
   console.log(excludeArray);
 
   allFieldsArray.forEach(function (element) {
-    console.log(element.classList, element.innerText);
+    console.log(`All Fields from QWERTY ${element.classList}, ${element.innerText}`);
     if (element.classList.value.includes("grey")) {
       console.log(element.innerText);
       excludeArray.push(element.innerText);
@@ -189,7 +189,11 @@ function buildArrayAndProcess() {
     return;
   }
 
-  const intersection1 = excludeArray.filter((element) =>
+  console.log('SANITY CHECK:')
+
+
+
+  const intersection1 = excludeArray.filter((element) => console.log(element);
     yellows.includes(element)
   );
 
@@ -270,9 +274,9 @@ function buildArrayAndProcess() {
         for (let i = 0; i < excludeArray.length; i++) {
           console.log(`This is the array member: ${excludeArray[i]}`);
 
-          // let regex3 = new RegExp(`${excludeArray[i].replace("\n", "")}`);
+          let regex3 = new RegExp(`${excludeArray[i].replace("\n", "")}`);
 
-          regex3 = new RegExp("W");
+          // regex3 = new RegExp("W");
 
           console.log(`Using this REGEX: ${regex3}`);
 
