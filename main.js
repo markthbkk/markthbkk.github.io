@@ -267,10 +267,15 @@ function buildArrayAndProcess() {
       // console.log(word);
 
       if (excludeArray.length > 0) {
-        console.log(excludeArray);
+        
 
         for (let i = 0; i < excludeArray.length; i++) {
+
+          console.log(`This is the array member: ${ excludeArray[i]}`);
+
           let regex3 = new RegExp(excludeArray[i]);
+
+          console.log(`Using this REGEX: ${regex3}`)
 
           let result3 = regex3.exec(word);
 
