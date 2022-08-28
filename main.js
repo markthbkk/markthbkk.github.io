@@ -276,7 +276,11 @@ function buildArrayAndProcess() {
 
           console.log(`now checking ${word}`)
 
+          console.log(result3.input);
+
           if (result3) {
+
+            console.log(result3);
             console.log(result3.input, excludeArray[i]);
             matchExcludedWord = true;
           }
