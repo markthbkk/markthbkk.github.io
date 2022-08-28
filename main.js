@@ -154,7 +154,9 @@ function buildArrayAndProcess() {
   console.log(excludeArray);
 
   allFieldsArray.forEach(function (element) {
-    console.log(`All Fields from QWERTY ${element.classList}, ${element.innerText}`);
+    console.log(
+      `All Fields from QWERTY ${element.classList}, ${element.innerText}`
+    );
     if (element.classList.value.includes("grey")) {
       console.log(element.innerText);
       excludeArray.push(element.innerText);
@@ -189,14 +191,10 @@ function buildArrayAndProcess() {
     return;
   }
 
-  console.log('SANITY CHECK:')
+  console.log(`SANITY CHECK: ${excludeArray[0]} ` );
 
-
-
-  const intersection1 = excludeArray.filter((element) => {
-    console.log(element);
+  const intersection1 = excludeArray.filter((element) =>
     yellows.includes(element)
-  }
   );
 
   const intersection2 = excludeArray.filter((element) =>
