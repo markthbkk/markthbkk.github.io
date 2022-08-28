@@ -44,7 +44,7 @@ const isVisible = "is-visible";
 
 // /fiveLetterWords.json
 
-https: fetch("fiveLetterWords.json")
+fetch("fiveLetterWords.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach(function (word) {
@@ -273,6 +273,8 @@ function buildArrayAndProcess() {
           let regex3 = new RegExp(excludeArray[i]);
 
           let result3 = regex3.exec(word);
+
+          console.log(`now checking ${word}`)
 
           if (result3) {
             console.log(result3.input, excludeArray[i]);
