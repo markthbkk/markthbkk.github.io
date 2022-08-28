@@ -154,9 +154,7 @@ function buildArrayAndProcess() {
   console.log(excludeArray);
 
   allFieldsArray.forEach(function (element) {
-    console.log(
-      `All Fields from QWERTY ${element.classList}, ${element.innerText}`
-    );
+    console.log(element.classList, element.innerText);
     if (element.classList.value.includes("grey")) {
       console.log(element.innerText);
       excludeArray.push(element.innerText);
@@ -190,8 +188,6 @@ function buildArrayAndProcess() {
     alert("Please select at least one green or yellow letter");
     return;
   }
-
-  // console.log(`SANITY CHECK: ${excludeArray[0]} ` );
 
   const intersection1 = excludeArray.filter((element) =>
     yellows.includes(element)
@@ -271,24 +267,24 @@ function buildArrayAndProcess() {
       // console.log(word);
 
       if (excludeArray.length > 0) {
-        for (let i = 0; i < excludeArray.length; i++) {
-          console.log(`This is the array member: ${excludeArray[i]}`);
+        
 
-          // let regex3 = new RegExp(`${excludeArray[i].replace("\n", "")}`);
+        for (let i = 0; i < excludeArray.length; i++) {
+
+          console.log(`This is the array member: ${ excludeArray[i]}`);
 
           let regex3 = new RegExp(excludeArray[i]);
 
-          // regex3 = new RegExp("W");
-
-          console.log(`Using this REGEX: ${regex3}`);
+          console.log(`Using this REGEX: ${regex3}`)
 
           let result3 = regex3.exec(word);
 
-          console.log(`now checking ${word}`);
+          console.log(`now checking ${word}`)
 
           console.log(result3.input);
 
           if (result3) {
+
             console.log(result3);
             console.log(result3.input, excludeArray[i]);
             matchExcludedWord = true;
