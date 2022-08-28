@@ -273,7 +273,7 @@ function buildArrayAndProcess() {
 
           console.log(`This is the array member: ${ excludeArray[i]}`);
 
-          let regex3 = new RegExp(excludeArray[i]);
+          let regex3 = new RegExp(`/${excludeArray[i]}/`);
 
           console.log(`Using this REGEX: ${regex3}`)
 
