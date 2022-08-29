@@ -154,7 +154,7 @@ function buildArrayAndProcess() {
   console.log(excludeArray);
 
   allFieldsArray.forEach(function (element) {
-    console.log(element.classList, element.innerText);
+    console.log(`ALL-FIELDS" ${element.classList}, ${element.innerText}`);
     if (element.classList.value.includes("grey")) {
       console.log(element.innerText);
       excludeArray.push(element.innerText);
