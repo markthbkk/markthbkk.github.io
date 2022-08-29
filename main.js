@@ -157,7 +157,7 @@ function buildArrayAndProcess() {
     console.log(`ALL-FIELDS" ${element.classList}, ${element.innerText}`);
     if (element.classList.value.includes("grey")) {
       console.log(element.innerText);
-      excludeArray.push(element.innerText);
+      excludeArray.push(element.innerText.replace("\n",""));
     }
   });
 
