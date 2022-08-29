@@ -281,7 +281,7 @@ function buildArrayAndProcess() {
 
           console.log(`now checking ${word}`)
 
-          console.log(result3.input);
+          // console.log(result3.input);
 
           if (result3) {
 
