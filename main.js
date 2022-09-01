@@ -157,7 +157,7 @@ function buildArrayAndProcess() {
     console.log(`ALL-FIELDS" ${element.classList}, ${element.innerText}`);
     if (element.classList.value.includes("grey")) {
       console.log(element.innerText);
-      excludeArray.push(element.innerText.replace("\n",""));
+      excludeArray.push(element.innerText.replace("\n", ""));
     }
   });
 
@@ -167,6 +167,10 @@ function buildArrayAndProcess() {
   let regexArray = ["\\w{1}", "\\w{1}", "\\w{1}", "\\w{1}", "\\w{1}"];
 
   let yellowMatchArray = new Array(0);
+
+  let yellowMatchArrayInterim = new Array(0);
+
+  let yellowArrayOfRegexs = new Array(0);
 
   let yellows = new Array(0);
 
@@ -181,6 +185,10 @@ function buildArrayAndProcess() {
     }
     if (element[1] === "Y" && element[0] !== "*") {
       yellows.push(element[0]);
+      let yellowBaseArray = ["\\w{1}", "\\w{1}", "\\w{1}", "\\w{1}", "\\w{1}"];
+      yellowBaseArray[index] = element[0];
+      let yellowRegexstr = [...yellowBaseArray].join("");
+      yellowArrayOfRegexs.push(yellowRegexstr);
     }
   });
 
@@ -247,10 +255,30 @@ function buildArrayAndProcess() {
           }
 
           if (i === yellows.length - 1 && pass) {
-            yellowMatchArray.push(result2.input);
+            yellowMatchArrayInterim.push(result2.input);
           }
         }
       }
+    });
+
+    yellowMatchArrayInterim.forEach(function (word) {
+      let yellowInterimCheckPass = true;
+      yellowArrayOfRegexs.forEach(function (regex, index) {
+
+        let yellowRegex = new RegExp(regex);
+        let result = yellowRegex.exec(word);
+
+        if (result !== null) {
+          yellowInterimCheckPass = false;
+        }
+
+        if (
+          index === yellowArrayOfRegexs.length - 1 &&
+          yellowInterimCheckPass
+        ) {
+          yellowMatchArray.push(word);
+        }
+      });
     });
   } else {
     yellowMatchArray = [...greenMatchArray];
@@ -272,7 +300,7 @@ function buildArrayAndProcess() {
 
           // let regex3 = new RegExp(excludeArray[i]);
 
-          let regex3 = excludeArray[i]
+          let regex3 = excludeArray[i];
 
           console.log(`Using this REGEX: ${regex3}`);
 
@@ -280,7 +308,7 @@ function buildArrayAndProcess() {
 
           // let result3 = regex3.match(word);
 
-          let result3 = word.match(regex3)
+          let result3 = word.match(regex3);
 
           console.log(`now checking ${word}`);
 
